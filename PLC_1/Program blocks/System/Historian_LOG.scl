@@ -1,0 +1,49 @@
+﻿FUNCTION_BLOCK "Historian_LOG"
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      CODE : Int;
+      DTL {InstructionName := 'DTL'; LibVersion := '1.0'} : DTL;
+   END_VAR
+
+   VAR_IN_OUT 
+      update { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Bool;   // Количество используемых записей
+   END_VAR
+
+   VAR 
+      DATA : Array[0..100] of Struct   // Массив записей
+         CODE : Int;
+         DTL {InstructionName := 'DTL'; LibVersion := '1.0'} : DTL;
+      END_STRUCT;
+   END_VAR
+
+   VAR_TEMP 
+      x : Int;
+   END_VAR
+
+   VAR CONSTANT 
+      SIZE : Int := 100;
+   END_VAR
+
+
+BEGIN
+	//добавление новой записи
+	IF #update = TRUE THEN
+	    
+	    #DATA[0].CODE := #CODE;
+	    #DATA[0]."DTL" := #DTL;
+	    
+	    //смещение элементов массива и его суммирование
+	    FOR #x := #SIZE TO 1 BY -1 DO
+	        #DATA[#x] := #DATA[#x - 1];
+	    END_FOR;
+	    
+	    #update := FALSE;
+	END_IF;
+	
+	
+	
+	
+	
+END_FUNCTION_BLOCK
+

@@ -1,0 +1,46 @@
+﻿FUNCTION "Indirect_AO" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Use : Bool;   // Использовать косвенную адресацию
+      "Byte" : DInt;   // Адрес PQW
+   END_VAR
+
+   VAR_IN_OUT 
+      Value : Int;   // Значение, передаваемое в PQW
+   END_VAR
+
+   VAR_TEMP 
+      index : DInt;   // Записываемый байт области PQW
+   END_VAR
+
+   VAR CONSTANT 
+      I : Byte := 16#81;   // Input
+      Q : Byte := 16#82;   // Output
+      M : Byte := 16#83;   // Bit Memory
+      D : Byte := 16#84;   // Data Block
+      zero : Byte;
+   END_VAR
+
+
+BEGIN
+	IF #Use AND #Byte > 0 THEN                    //True = использовать косвенную адресацию, False - использовать выход блока
+	    #index := #Byte;
+	    "AO_Value" := #Value;
+	    POKE(
+	         area := #Q,            //выбор области памяти, см раздел констант
+	         dbNumber := #zero,     //указатель на номер блока данных (при обращении к входам, выходам и битовой памяти = 0)
+	         byteOffset := #index,   //начальный адрес для записи (QW..., например - 256 =>  запись в QW256)
+	         value := "AO_Val_1"        //передача значения от входа блока Indirect_AO в начальный адрес
+	    );                          //по умолчанию функция POKE принимает и записывает в value 16 значимых бит, считая от начального адреса
+	    #index := #Byte + 1;
+	    POKE(
+	         area := #Q,            //выбор области памяти, см раздел констант
+	         dbNumber := #zero,     //указатель на номер блока данных (при обращении к входам, выходам и битовой памяти = 0)
+	         byteOffset := #index,   //начальный адрес для записи (QW..., например - 256 =>  запись в QW256)
+	         value := "AO_Val_2"        //передача значения от входа блока Indirect_AO в начальный адрес
+	    );
+	END_IF;
+	    
+END_FUNCTION
+

@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V17" />
+  <DocumentInfo>
+    <Created>2023-12-22T15:28:35.6842744Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Advanced</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="AllBlock" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">2.4 разрешение на работу</MultiLanguageText><MultiLanguageText Lang="ru-RU">2.4 разрешение на работу</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_2" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">2.3 Нижний уровень</MultiLanguageText><MultiLanguageText Lang="ru-RU">2.3 Нижний уровень</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_3" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Ротаметр 1</MultiLanguageText><MultiLanguageText Lang="ru-RU">Ротаметр 1</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_4" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Ротаметр 2</MultiLanguageText><MultiLanguageText Lang="ru-RU">Ротаметр 2</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_5" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Ротаметр 3</MultiLanguageText><MultiLanguageText Lang="ru-RU">Ротаметр 3</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_6" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Датчик переливва</MultiLanguageText><MultiLanguageText Lang="ru-RU">Датчик переливва</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_7" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Датчик переливва</MultiLanguageText><MultiLanguageText Lang="ru-RU">Датчик переливва</MultiLanguageText></Comment><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_8" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_9" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_10" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_11" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="signal_12" Datatype="&quot;DI_ex&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="I" Datatype="Bool" /></Section><Section Name="Output"><Member Name="Signal" Datatype="Bool" /></Section><Section Name="InOut" /><Section Name="Static"><Member Name="CMD" Datatype="&quot;CMD&quot;"><Sections><Section Name="None"><Member Name="Start_A" Datatype="Bool" /><Member Name="Start_M" Datatype="Bool" /><Member Name="Hand" Datatype="Bool" /><Member Name="Local" Datatype="Bool" /><Member Name="Lock" Datatype="Bool" /><Member Name="Service" Datatype="Bool" /><Member Name="Safety" Datatype="Bool" /><Member Name="Force" Datatype="Bool" /><Member Name="Alarm" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /><Member Name="Sim" Datatype="Bool" /><Member Name="Vector" Datatype="Bool" /><Member Name="ResetOpTime" Datatype="Bool" /><Member Name="Ready" Datatype="Bool" /><Member Name="reserv" Datatype="Bool" /></Section></Sections></Member><Member Name="Use" Datatype="Struct"><Member Name="Inverse" Datatype="Bool" /><Member Name="Indirect" Datatype="Bool" /></Member><Member Name="ADDR_Byte" Datatype="Int" /><Member Name="ADDR_Bit" Datatype="Int" /><Member Name="Filter_On" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member><Member Name="Filter_Off" Datatype="&quot;Time_S_b&quot;"><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP" Datatype="Byte" /><Member Name="Now" Datatype="Byte" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member></Section></Sections></Member>
+    <Member Name="Time_DTL" Datatype="DTL" Version="1.0" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>DIx_1</Name>
+      <Number>200</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Input - входной сигнал контроллера
+pulse - частота фильтрации дребезга
+Signal - обработанный и отфильтрованный сигнал, используемый в дальнейшем
+</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>ru-RU</Culture>
+              <Text>Input - входной сигнал контроллера
+pulse - частота фильтрации дребезга
+Signal - обработанный и отфильтрованный сигнал, используемый в дальнейшем
+</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="All_Block" />
+      </Symbol>
+    </Access>
+    <Call UId="22">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="23">
+          <Component Name="AllBlock" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="24">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="25">
+          <Component Name="signal_2" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="22" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <OpenCon UId="26" />
+      <NameCon UId="22" Name="I" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="22" Name="eno" />
+      <NameCon UId="24" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="22" Name="Signal" />
+      <IdentCon UId="21" />
+    </Wire>
+    <Wire UId="33">
+      <OpenCon UId="27" />
+      <NameCon UId="24" Name="I" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="24" Name="Signal" />
+      <OpenCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>AllBlock</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>AllBlock</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="22">
+          <Component Name="signal_3" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="23">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="24">
+          <Component Name="signal_4" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <OpenCon UId="25" />
+      <NameCon UId="21" Name="I" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="21" Name="eno" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="21" Name="Signal" />
+      <OpenCon UId="26" />
+    </Wire>
+    <Wire UId="33">
+      <OpenCon UId="27" />
+      <NameCon UId="23" Name="I" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="23" Name="Signal" />
+      <OpenCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>LS</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>LS</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="22">
+          <Component Name="signal_5" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="23">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="24">
+          <Component Name="signal_6" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <OpenCon UId="25" />
+      <NameCon UId="21" Name="I" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="21" Name="eno" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="21" Name="Signal" />
+      <OpenCon UId="26" />
+    </Wire>
+    <Wire UId="33">
+      <OpenCon UId="27" />
+      <NameCon UId="23" Name="I" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="23" Name="Signal" />
+      <OpenCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>RT</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>RT</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="22">
+          <Component Name="signal_7" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="23">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="24">
+          <Component Name="signal_8" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <OpenCon UId="25" />
+      <NameCon UId="21" Name="I" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="21" Name="eno" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="21" Name="Signal" />
+      <OpenCon UId="26" />
+    </Wire>
+    <Wire UId="33">
+      <OpenCon UId="27" />
+      <NameCon UId="23" Name="I" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="23" Name="Signal" />
+      <OpenCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Промывка</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>Промывка</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="20" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="22">
+          <Component Name="signal_9" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="23">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="24">
+          <Component Name="signal_10" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <OpenCon UId="25" />
+      <NameCon UId="21" Name="I" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="21" Name="eno" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="21" Name="Signal" />
+      <OpenCon UId="26" />
+    </Wire>
+    <Wire UId="33">
+      <OpenCon UId="27" />
+      <NameCon UId="23" Name="I" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="23" Name="Signal" />
+      <OpenCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="21" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Local </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>Local </Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="27" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="22">
+          <Component Name="signal_11" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="23">
+      <CallInfo Name="DI_ex" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="24">
+          <Component Name="signal_12" />
+        </Instance>
+        <Parameter Name="I" Section="Input" Type="Bool" />
+        <Parameter Name="Signal" Section="Output" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="29">
+      <Powerrail />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+    <Wire UId="30">
+      <OpenCon UId="25" />
+      <NameCon UId="21" Name="I" />
+    </Wire>
+    <Wire UId="31">
+      <NameCon UId="21" Name="eno" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="32">
+      <NameCon UId="21" Name="Signal" />
+      <OpenCon UId="26" />
+    </Wire>
+    <Wire UId="33">
+      <OpenCon UId="27" />
+      <NameCon UId="23" Name="I" />
+    </Wire>
+    <Wire UId="34">
+      <NameCon UId="23" Name="Signal" />
+      <OpenCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="28" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Авария</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>Авария</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Time_SYS_DB" />
+        <Component Name="RD_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Time_DTL" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="23" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <Powerrail />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="25">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="in" />
+    </Wire>
+    <Wire UId="26">
+      <NameCon UId="23" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="32" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Метка времени</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>Метка времени</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="35" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="36" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="37" CompositionName="Items">
+            <AttributeList>
+              <Culture>ru-RU</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

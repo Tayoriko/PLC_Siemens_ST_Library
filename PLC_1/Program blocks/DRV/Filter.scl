@@ -1,0 +1,82 @@
+﻿FUNCTION_BLOCK "Filter"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Start : Bool;   // Управление процессом
+      Value : Real;   // Входное значение
+   END_VAR
+
+   VAR_OUTPUT 
+      Median : Real;   // Уредненное значение
+   END_VAR
+
+   VAR_IN_OUT 
+      max { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int := 10;   // Количество используемых записей
+   END_VAR
+
+   VAR RETAIN
+      Moment { S7_SetPoint := 'True'} : Bool := true;   // 0 - мгновенный процесс, 1 - затухающий
+   END_VAR
+   VAR 
+      CMD : Bool;
+      cnt { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;   // Текущее количество записей
+      Summ { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Real;   // Сумма всех записей
+      DATA { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Array[0..100] of Real;   // Массив записей
+   END_VAR
+
+   VAR_TEMP 
+      x : Int;
+   END_VAR
+
+
+BEGIN
+	//ограничение максимального количества записей по длине массива
+	IF #max > 100 THEN
+	    #max := 100;
+	END_IF;
+	
+	//добавление новой записи
+	IF #Start = TRUE THEN
+	    IF #cnt < #max THEN
+	        #cnt := #cnt + 1;
+	    END_IF;
+	END_IF;
+	
+	//запись новых данных и обнуление суммы
+	#DATA[0] := #Value;
+	#Summ := 0.0;
+	
+	//ограничение количества задействованных записей
+	IF #cnt > #max THEN
+	    #cnt := #max;
+	END_IF;
+	
+	//смещение элементов массива и его суммирование
+	FOR #x := #max TO 1 BY -1 DO
+	    #DATA[#x] := #DATA[#x - 1];
+	    IF #x <= #cnt AND #Start THEN
+	        #Summ := #Summ + #DATA[#x];
+	    END_IF;
+	END_FOR;
+	
+	//обнуление количества задействонных элементов мгновенное или затухающее  КАКАЯ_ТО_ХУИТА
+	IF #Start = FALSE THEN
+	    IF #Moment = TRUE AND #CMD = FALSE THEN
+	        IF #cnt > 0 THEN
+	            #cnt := #cnt - 1;
+	            #Summ := #Summ - #Value;
+	        END_IF;
+	    ELSE
+	        #cnt := 0;
+	    END_IF;
+	END_IF;
+	
+	//вычисление среднего арифметического по всем задействованным элементам массива
+	IF #cnt > 0 THEN
+	    #Median := #Summ / #cnt;
+	ELSE
+	    #Median := 0.0;
+	END_IF;
+	
+END_FUNCTION_BLOCK
+

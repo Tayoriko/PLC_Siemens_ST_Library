@@ -1,0 +1,68 @@
+﻿FUNCTION "INT_TO_WSTRING" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Value : Int;
+      BASE : Array[0..9] of WChar;
+      AsTime : Bool;
+   END_VAR
+
+   VAR_OUTPUT 
+      "String" : WString;
+   END_VAR
+
+   VAR_TEMP 
+      x1 : Int;
+      x10 : Int;
+      x100 : Int;
+      x1000 : Int;
+      x10000 : Int;
+      "void" : WString[1];
+   END_VAR
+
+
+BEGIN
+	#x10000 := #Value / 10000;
+	#x1000 := (#Value - #x10000*10000) / 1000;
+	#x100 := (#Value - #x10000*10000 - #x1000*1000) / 100;
+	#x10 := (#Value - #x10000*10000- #x1000*1000 - #x100*100) / 10;
+	#x1 := (#Value - #x10000 * 10000 - #x1000 * 1000 - #x100 * 100 - #x10 * 10) / 1;
+	
+	#String := #void;
+	IF #x10000 > 0 THEN
+	    #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x10000]);
+	END_IF;
+	
+	IF #x1000 > 0 THEN
+	    #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x1000]);
+	ELSE
+	    IF #x10000 > 0 THEN
+	        #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x1000]);
+	    END_IF;
+	END_IF;
+	
+	IF #x100 > 0 THEN
+	    #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x100]);
+	ELSE
+	    IF #x1000 > 0 OR #x10000 > 0 THEN
+	        #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x100]);
+	    END_IF;
+	END_IF;
+	
+	IF #x10 > 0 THEN
+	    #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x10]);
+	ELSE
+	    IF #x100 > 0 OR #x1000 > 0 OR #x10000 > 0 OR #AsTime THEN
+	        #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x10]);
+	    END_IF;
+	END_IF;
+	
+	IF #x1 > 0 THEN
+	    #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x1]);
+	ELSE
+	    IF #x10 > 0 OR #x100 > 0 OR #x1000 > 0 OR #x10000 > 0 OR #AsTime THEN
+	        #String := CONCAT_WSTRING(IN1 := #String, IN2 := #BASE[#x1]);
+	    END_IF;
+	END_IF;
+END_FUNCTION
+

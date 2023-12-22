@@ -1,0 +1,50 @@
+﻿FUNCTION "Indirect_AI" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Use : Bool;   // Использовать косвенную адресацию
+      "Byte" : DInt;   // Адрес PIW
+   END_VAR
+
+   VAR_IN_OUT 
+      Value : Int;   // Значение PIW
+   END_VAR
+
+   VAR_TEMP 
+      index : DInt;   // Читаемый байт области PIW
+   END_VAR
+
+   VAR CONSTANT 
+      I : Byte := 16#81;   // Input
+      Q : Byte := 16#82;   // Output
+      M : Byte := 16#83;   // Bit Memory
+      D : Byte := 16#84;   // Data Block
+      zero : Byte;
+   END_VAR
+
+
+BEGIN
+	IF #Use AND #Byte <> 0 THEN                                 //True = использовать косвенную адресацию, False - использовать вход блока
+	    #index := #Byte;
+	    "AI_Val_1" := PEEK(                         //Value - возвращаемое значение (сигнал на входе ПЛК)
+	                   area := #I,              //выбор области памяти, см раздел констант
+	                   dbNumber := #zero,       //указатель на номер блока данных (при обращении к входам, выходам и битовой памяти = 0)
+	                   byteOffset := #index)     //начальный адрес для чтения (IW..., например - 256 =>  чтение из IW256)
+	    ;
+	    #index := #Byte + 1;
+	    "AI_Val_2" := PEEK(                         //Value - возвращаемое значение (сигнал на входе ПЛК)
+	                   area := #I,              //выбор области памяти, см раздел констант
+	                   dbNumber := #zero,       //указатель на номер блока данных (при обращении к входам, выходам и битовой памяти = 0)
+	                   byteOffset := #index)     //начальный адрес для чтения (IW..., например - 256 =>  чтение из IW256)
+	    ;
+	    #Value := "AI_Value";
+	    
+	    //по умолчанию функция PEEK читает и возвращает в Value 16 значимых бит, считая от начального адреса
+	END_IF;
+	
+	//возвращает 0 в значение PIW, если адрес не указан
+	IF #Use AND #Byte = 0 THEN
+	    #Value := 0;
+	END_IF;
+END_FUNCTION
+

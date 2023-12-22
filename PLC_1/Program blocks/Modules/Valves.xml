@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V17" />
+  <DocumentInfo>
+    <Created>2023-12-22T15:28:35.846848Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Advanced</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="Time_DTL" Datatype="DTL" Version="1.0" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>Valves</Name>
+      <Number>250</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>FB_Alarm - аварийный сигнал для отключения клапана (например по давлению воздуха), 0 - авария, 1 - норма
+FB_QF - сигнал готовности к работе (например, по наличию 24в в линии управления пневмораспределителем), 0 - авария, 1 - норма
+FB_Open - обратная связь датчика открытия клапана, 0 - закрыт, 1 - открыт
+FB_Close - обратная связь датчика закрытия клапана, 1 - закрыт, 0 - открыт
+Value - управление аналоговым клапаном с позиционированием, формат Real, передаётся в блок AO_ex для конвертации в выходной сигнал контроллера (PQW), для использования установите #CMD.Analog в True
+
+Q -  постоянный сигнал управления клапаном, 0 - закрыть, 1 - открыть</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>ru-RU</Culture>
+              <Text>FB_Alarm - аварийный сигнал для отключения клапана (например по давлению воздуха), 0 - авария, 1 - норма
+FB_QF - сигнал готовности к работе (например, по наличию 24в в линии управления пневмораспределителем), 0 - авария, 1 - норма
+FB_Open - обратная связь датчика открытия клапана, 0 - закрыт, 1 - открыт
+FB_Close - обратная связь датчика закрытия клапана, 1 - закрыт, 0 - открыт
+Value - управление аналоговым клапаном с позиционированием, формат Real, передаётся в блок AO_ex для конвертации в выходной сигнал контроллера (PQW), для использования установите #CMD.Analog в True
+
+Q -  постоянный сигнал управления клапаном, 0 - закрыть, 1 - открыть</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Call UId="21">
+      <CallInfo Name="DRV_V_D2" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="22">
+          <Component Name="V_D2_example_DB" />
+        </Instance>
+        <Parameter Name="All_Block" Section="Input" Type="Bool" />
+        <Parameter Name="FB_QF" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_KM_Open" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_KM_Close" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_Open" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_Close" Section="InOut" Type="Bool" />
+        <Parameter Name="S_Alarm" Section="InOut" Type="Bool" />
+        <Parameter Name="CMD_Open" Section="InOut" Type="Bool" />
+        <Parameter Name="CMD_Close" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+    <Call UId="23">
+      <CallInfo Name="DRV_V_D2A" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="24">
+          <Component Name="V_D2A_example_DB" />
+        </Instance>
+        <Parameter Name="All_Block" Section="Input" Type="Bool" />
+        <Parameter Name="FB_QF" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_KM_Open" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_KM_Close" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_Open" Section="InOut" Type="Bool" />
+        <Parameter Name="FB_Close" Section="InOut" Type="Bool" />
+        <Parameter Name="S_Alarm" Section="InOut" Type="Bool" />
+        <Parameter Name="CMD_Open" Section="InOut" Type="Bool" />
+        <Parameter Name="CMD_Close" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="43">
+      <Powerrail />
+      <NameCon UId="21" Name="en" />
+    </Wire>
+    <Wire UId="44">
+      <OpenCon UId="25" />
+      <NameCon UId="21" Name="All_Block" />
+    </Wire>
+    <Wire UId="45">
+      <OpenCon UId="26" />
+      <NameCon UId="21" Name="FB_QF" />
+    </Wire>
+    <Wire UId="46">
+      <OpenCon UId="27" />
+      <NameCon UId="21" Name="FB_KM_Open" />
+    </Wire>
+    <Wire UId="47">
+      <OpenCon UId="28" />
+      <NameCon UId="21" Name="FB_KM_Close" />
+    </Wire>
+    <Wire UId="48">
+      <OpenCon UId="29" />
+      <NameCon UId="21" Name="FB_Open" />
+    </Wire>
+    <Wire UId="49">
+      <OpenCon UId="30" />
+      <NameCon UId="21" Name="FB_Close" />
+    </Wire>
+    <Wire UId="50">
+      <OpenCon UId="31" />
+      <NameCon UId="21" Name="S_Alarm" />
+    </Wire>
+    <Wire UId="51">
+      <OpenCon UId="32" />
+      <NameCon UId="21" Name="CMD_Open" />
+    </Wire>
+    <Wire UId="52">
+      <OpenCon UId="33" />
+      <NameCon UId="21" Name="CMD_Close" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="21" Name="eno" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="54">
+      <OpenCon UId="34" />
+      <NameCon UId="23" Name="All_Block" />
+    </Wire>
+    <Wire UId="55">
+      <OpenCon UId="35" />
+      <NameCon UId="23" Name="FB_QF" />
+    </Wire>
+    <Wire UId="56">
+      <OpenCon UId="36" />
+      <NameCon UId="23" Name="FB_KM_Open" />
+    </Wire>
+    <Wire UId="57">
+      <OpenCon UId="37" />
+      <NameCon UId="23" Name="FB_KM_Close" />
+    </Wire>
+    <Wire UId="58">
+      <OpenCon UId="38" />
+      <NameCon UId="23" Name="FB_Open" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="39" />
+      <NameCon UId="23" Name="FB_Close" />
+    </Wire>
+    <Wire UId="60">
+      <OpenCon UId="40" />
+      <NameCon UId="23" Name="S_Alarm" />
+    </Wire>
+    <Wire UId="61">
+      <OpenCon UId="41" />
+      <NameCon UId="23" Name="CMD_Open" />
+    </Wire>
+    <Wire UId="62">
+      <OpenCon UId="42" />
+      <NameCon UId="23" Name="CMD_Close" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Задвижки</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>Задвижки</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="Time_SYS_DB" />
+        <Component Name="RD_Time" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Time_DTL" />
+      </Symbol>
+    </Access>
+    <Part Name="Move" UId="23" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="24">
+      <Powerrail />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="25">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="in" />
+    </Wire>
+    <Wire UId="26">
+      <NameCon UId="23" Name="out1" />
+      <IdentCon UId="22" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Метка времени</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text>Метка времени</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="19" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="1A" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Клапана</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="1B" CompositionName="Items">
+            <AttributeList>
+              <Culture>ru-RU</Culture>
+              <Text>Клапана</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

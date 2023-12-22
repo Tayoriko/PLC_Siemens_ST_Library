@@ -1,0 +1,68 @@
+﻿FUNCTION "PLF_FC" : Void
+{ S7_Optimized_Access := 'FALSE' }
+VERSION : 0.1
+   VAR_INPUT 
+      REQ : Real;   // Запрошенная производительность
+   END_VAR
+
+   VAR_IN_OUT 
+      Now : Bool;   // Блок активен
+      PLF_0 : Struct   // Параметры участка предъидущего
+         Use : Bool;   // Использовать участок
+         Low : Real;   // Датчик - начальное значение (ось Х)
+         High : Real;   // Датчик - конечное значение (ось Х)
+         Point_A : Real;   // Управляющий сигнал - минимальное значение (ось Y)
+         Point_B : Real;   // Управляющий сигнал - максимальное значение (ось Y)
+         res : Word;   // резерв
+      END_STRUCT;
+      PLF_1 : Struct   // Параметры участка текущего
+         Use : Bool;   // Использовать участок
+         Low : Real;   // Датчик - начальное значение (ось Х)
+         High : Real;   // Датчик - конечное значение (ось Х)
+         Point_A : Real;   // Управляющий сигнал - минимальное значение (ось Y)
+         Point_B : Real;   // Управляющий сигнал - максимальное значение (ось Y)
+         res : Word;   // резерв
+      END_STRUCT;
+      SP : Real;   // Управляющий сигнал
+   END_VAR
+
+
+BEGIN
+	// передаём стартовые точки в следующий фрагмент
+	#PLF_1.Low := #PLF_0.High;
+	#PLF_1.Point_A := #PLF_0.Point_B;
+	
+	// отключаем при некорректных значениях
+	IF #PLF_0.High <= #PLF_0.Low OR #PLF_0.Point_B < #PLF_0.Point_B THEN
+	    #PLF_0.Use := False;
+	END_IF;
+	
+	// отключаем при неполном графике
+	IF #PLF_1.Use AND NOT #PLF_0.Use THEN
+	    #PLF_1.Use := False;
+	END_IF;
+	
+	// следующий фрагмент используется 
+	IF #PLF_0.Use AND #PLF_1.Use AND #REQ > #PLF_0.Low AND #REQ <= #PLF_0.High THEN
+	    #SP := ((#REQ - #PLF_0.Low) / ((#PLF_0.High - #PLF_0.Low) / (#PLF_0.Point_B - #PLF_0.Point_A))) + #PLF_0.Point_A;
+	    #Now := True;
+	END_IF;
+	
+	// следующий фрагмент не задействован
+	IF #PLF_0.Use AND NOT #PLF_1.Use AND #REQ > #PLF_0.Low THEN
+	    IF #REQ <= #PLF_0.High THEN
+	        #SP := ((#REQ - #PLF_0.Low) / ((#PLF_0.High - #PLF_0.Low) / (#PLF_0.Point_B - #PLF_0.Point_A))) + #PLF_0.Point_A;
+	    END_IF;
+	    IF #REQ > #PLF_0.High THEN
+	        #SP := #PLF_0.Point_B;
+	    END_IF;
+	    #Now := True;
+	END_IF;
+	
+	// фрагмент не активен
+	IF NOT #PLF_0.Use OR #REQ <= #PLF_0.Low OR (#PLF_0.Use AND #PLF_1.Use AND #REQ > #PLF_0.High) THEN
+	    #Now := False;
+	END_IF;
+	
+END_FUNCTION
+

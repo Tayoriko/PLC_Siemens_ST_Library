@@ -1,0 +1,20 @@
+﻿FUNCTION "Void_Data" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_IN_OUT 
+      DATA : Array[0..100] of Word;
+   END_VAR
+
+   VAR_TEMP 
+      x : Int;
+   END_VAR
+
+
+BEGIN
+	FOR #x := 0 TO 100 DO
+	    #DATA[#x] := 0;
+	    ;
+	END_FOR;
+	
+END_FUNCTION
+

@@ -1,0 +1,33 @@
+﻿FUNCTION "Indirect_DI" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Use : Bool;   // Использовать косвенную адресацию
+      "Byte" : DInt;   // Адрес байта области памяти Input
+      Bit : Int;   // Адрес бита в указанном байте
+   END_VAR
+
+   VAR_IN_OUT 
+      Value : Bool;   // Состояние входа
+   END_VAR
+
+   VAR CONSTANT 
+      I : Byte := 16#81;   // Input
+      Q : Byte := 16#82;   // Output
+      M : Byte := 16#83;   // Bit Memory
+      D : Byte := 16#84;   // Data Block
+      zero : Byte;
+   END_VAR
+
+
+BEGIN
+	IF #Use AND #Bit <= 7 THEN                                    //True = использовать косвенную адресацию, False - использовать вход блока
+	    #Value := PEEK_BOOL(                        //Value - возвращаемое значение (сигнал на входе ПЛК)
+	                        area := #I,             //выбор области памяти, см раздел констант
+	                        dbNumber := #zero,      //указатель на номер блока данных (при обращении к входам, выходам и битовой памяти = 0)
+	                        byteOffset := #Byte,    //начальный адрес для чтения (IB..., например 2 => чтение из IB2) 
+	                        bitOffset := #Bit       //номер значимого бита в байте (I[Byte].[Bit], например I[2].[4] => чтение бита из I2.4)
+	    );                                          //по умолчанию функция PEEK_BOOL читает и возвращает в Value 1 значимый бит
+	END_IF;
+END_FUNCTION
+

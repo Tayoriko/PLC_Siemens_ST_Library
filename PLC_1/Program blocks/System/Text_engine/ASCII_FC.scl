@@ -1,0 +1,137 @@
+﻿FUNCTION "ASCII_FC" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Symbol : Char;
+   END_VAR
+
+   VAR_IN_OUT 
+      Code : Byte;
+      sys : Bool;
+   END_VAR
+
+
+BEGIN
+	//числа от 0 до 9
+	IF #sys = 0 THEN
+	    IF #Symbol = '$00' THEN
+	        #Code := 16#30;
+	    END_IF;
+	    IF #Symbol = '$01' THEN
+	        #Code := 16#31;
+	    END_IF;
+	    IF #Symbol = '$02' THEN
+	        #Code := 16#32;
+	    END_IF;
+	    IF #Symbol = '$03' THEN
+	        #Code := 16#33;
+	    END_IF;
+	    IF #Symbol = '$04' THEN
+	        #Code := 16#34;
+	    END_IF;
+	    IF #Symbol = '$05' THEN
+	        #Code := 16#35;
+	    END_IF;
+	    IF #Symbol = '$06' THEN
+	        #Code := 16#36;
+	    END_IF;
+	    IF #Symbol = '$07' THEN
+	        #Code := 16#37;
+	    END_IF;
+	    IF #Symbol = '$08' THEN
+	        #Code := 16#38;
+	    END_IF;
+	    IF #Symbol = '$09' THEN
+	        #Code := 16#39;
+	    END_IF;
+	    IF #Symbol = '$0A' THEN
+	        #Code := 16#41;
+	    END_IF;
+	    IF #Symbol = '$0B' THEN
+	        #Code := 16#42;
+	    END_IF;
+	    IF #Symbol = '$0C' THEN
+	        #Code := 16#43;
+	    END_IF;
+	    IF #Symbol = '$0D' THEN
+	        #Code := 16#44;
+	    END_IF;
+	    IF #Symbol = '$0E' THEN
+	        #Code := 16#45;
+	    END_IF;
+	    IF #Symbol = '$0F' THEN
+	        #Code := 16#46;
+	    END_IF;
+	END_IF;
+	
+	//числа от 0 до 9
+	IF #sys = 1 THEN
+	    IF #Symbol = '$00' THEN
+	        #Code := 16#30;
+	    END_IF;
+	    IF #Symbol = '$01' THEN
+	        #Code := 16#31;
+	    END_IF;
+	    IF #Symbol = '$02' THEN
+	        #Code := 16#32;
+	    END_IF;
+	    IF #Symbol = '$03' THEN
+	        #Code := 16#33;
+	    END_IF;
+	    IF #Symbol = '$04' THEN
+	        #Code := 16#34;
+	    END_IF;
+	    IF #Symbol = '$05' THEN
+	        #Code := 16#35;
+	    END_IF;
+	    IF #Symbol = '$06' THEN
+	        #Code := 16#36;
+	    END_IF;
+	    IF #Symbol = '$07' THEN
+	        #Code := 16#37;
+	    END_IF;
+	    IF #Symbol = '$08' THEN
+	        #Code := 16#38;
+	    END_IF;
+	    IF #Symbol = '$09' THEN
+	        #Code := 16#39;
+	    END_IF;
+	    IF #Symbol = '$L' THEN
+	        #Code := 16#41;
+	    END_IF;
+	    IF #Symbol = '$0B' THEN
+	        #Code := 16#42;
+	    END_IF;
+	    IF #Symbol = '$P' THEN
+	        #Code := 16#43;
+	    END_IF;
+	    IF #Symbol = '$R' THEN
+	        #Code := 16#44;
+	    END_IF;
+	    IF #Symbol = '$0E' THEN
+	        #Code := 16#45;
+	    END_IF;
+	    IF #Symbol = '$0F' THEN
+	        #Code := 16#46;
+	    END_IF;
+	END_IF;
+	
+	
+	
+	//заглавные буквы А..Я
+	
+	
+	//строчные буквы А..Я
+	
+	
+	//специальные символы
+	IF #Symbol = '?' THEN #Code := 16#3F; END_IF;
+	IF #Symbol = '!' THEN #Code := 16#21; END_IF;
+	IF #Symbol = '#' THEN #Code := 16#22; END_IF;
+	
+	//заглавные буквы A..Z
+	IF #Symbol = 'g' THEN #Code := 16#67; END_IF;
+	IF #Symbol = 'F' THEN #Code := 16#46; END_IF;
+	//строчные буквы a..z
+END_FUNCTION
+

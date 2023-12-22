@@ -1,0 +1,36 @@
+﻿FUNCTION "Indirect_MOVE" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Source_DB : UInt;
+      Source_OFFSET : UInt;
+      Target_DB : UInt;
+      Target_OFFSET : UInt;
+      Length : UInt;
+   END_VAR
+
+   VAR_TEMP 
+      x : Int;
+   END_VAR
+
+   VAR CONSTANT 
+      I : Byte := 16#81;   // Input
+      Q : Byte := 16#82;   // Output
+      M : Byte := 16#83;   // Bit Memory
+      D : Byte := 16#84;   // Data Block
+      PIW : Byte := 16#1;   // S7-1500 Only
+      zero : Byte;
+   END_VAR
+
+
+BEGIN
+	
+	POKE_BLK(area_src := #D,
+	         dbNumber_src := #Source_DB,
+	         byteOffset_src := #Source_OFFSET,
+	         area_dest := #D,
+	         dbNumber_dest := #Target_DB,
+	         byteOffset_dest := #Target_OFFSET,
+	         count := #Length * 2);
+END_FUNCTION
+

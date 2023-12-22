@@ -1,0 +1,34 @@
+﻿FUNCTION "Indirect_DO" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Use : Bool;   // Использовать косвенную адресацию
+      "Byte" : DInt;   // Адрес байт в области памяти Quit (Output)
+      Bit : Int;   // Адрес бита в указанном байте
+   END_VAR
+
+   VAR_IN_OUT 
+      Value : Bool;   // Записываемое значение
+   END_VAR
+
+   VAR CONSTANT 
+      I : Byte := 16#81;   // Input
+      Q : Byte := 16#82;   // Output
+      M : Byte := 16#83;   // Bit Memory
+      D : Byte := 16#84;   // Data Block
+      zero : Byte;
+   END_VAR
+
+
+BEGIN
+	IF #Use AND #Bit <= 7 THEN                        //True = использовать косвенную адресацию, False - использовать выход блока
+	    POKE_BOOL(                      
+	              area := #Q,           //выбор области памяти, см раздел констант
+	              dbNumber := #zero,    //указатель на номер блока данных (при обращении к входам, выходам и битовой памяти = 0)
+	              byteOffset := #Byte,  //начальный адрес для записи (QB..., например 4 => запись в QB4)
+	              bitOffset := #Bit,    //номер целевого бита в байте (Q[Byte].[Bit], например Q[4].[7] => запись зачения Value в Q4.7)
+	              value := #Value       //передача значения от входа блока Indirect_DO в целевой бит в выбранном байте
+	    );                              //по умолчанию функция POKE_BOOL принимает и записывает в value 1 значимый бит
+	END_IF; 
+END_FUNCTION
+

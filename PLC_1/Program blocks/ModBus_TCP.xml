@@ -1,0 +1,2274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V17" />
+  <DocumentInfo>
+    <Created>2023-12-22T15:28:29.1657918Z</Created>
+    <ExportSetting>WithDefaults</ExportSetting>
+    <InstalledProducts>
+      <Product>
+        <DisplayName>Totally Integrated Automation Portal</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>TIA Portal Openness</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <OptionPackage>
+        <DisplayName>TIA Portal Version Control Interface</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>STEP 7 Professional</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+      <OptionPackage>
+        <DisplayName>STEP 7 Safety</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </OptionPackage>
+      <Product>
+        <DisplayName>WinCC Advanced</DisplayName>
+        <DisplayVersion>V17</DisplayVersion>
+      </Product>
+    </InstalledProducts>
+  </DocumentInfo>
+  <SW.Blocks.FB ID="0">
+    <AttributeList>
+      <AutoNumber>false</AutoNumber>
+      <HeaderAuthor />
+      <HeaderFamily />
+      <HeaderName />
+      <HeaderVersion>0.1</HeaderVersion>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input" />
+  <Section Name="Output" />
+  <Section Name="InOut" />
+  <Section Name="Static">
+    <Member Name="DATA" Datatype="Array[0..100] of Word" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Массив данных</MultiLanguageText></Comment></Member>
+    <Member Name="Step" Datatype="Int" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Шаг цикла опроса</MultiLanguageText></Comment></Member>
+    <Member Name="Device" Datatype="Int" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Текущее устройство из списка DEV</MultiLanguageText></Comment><StartValue>1</StartValue></Member>
+    <Member Name="Limit" Datatype="Int" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Общее количество устройств</MultiLanguageText></Comment><StartValue>10</StartValue></Member>
+    <Member Name="COM_Control" Datatype="Struct" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="Enable" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Использовать коммуникацию</MultiLanguageText></Comment><StartValue>true</StartValue></Member><Member Name="Start" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Начать опрос</MultiLanguageText></Comment></Member><Member Name="Reset" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Сброс драйвера</MultiLanguageText></Comment></Member><Member Name="REQ_Done" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Опрос завершён</MultiLanguageText></Comment></Member><Member Name="REQ_Busy" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Опрос в процессе</MultiLanguageText></Comment></Member><Member Name="REQ_Error" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Опрос - ошибка</MultiLanguageText></Comment></Member><Member Name="REQ_Status" Datatype="Word"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Опрос - код состояния</MultiLanguageText></Comment></Member><Member Name="Error_Code" Datatype="Word"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Опрос - код аварии</MultiLanguageText></Comment></Member><Member Name="Status" Datatype="Int"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">1 - успешно, 2 - нет ответа, 3 - ошибка параметров</MultiLanguageText></Comment></Member></Member>
+    <Member Name="COM_REQ" Datatype="Struct" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="ADDR" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Сетевой адрес устройства</MultiLanguageText></Comment></Member><Member Name="MODE" Datatype="USInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">0 - чтение, 1 - запись</MultiLanguageText></Comment></Member><Member Name="Register" Datatype="UDInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Начальный регистр опроса, см F1</MultiLanguageText></Comment></Member><Member Name="Length" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Количество последовательных слов для опроса</MultiLanguageText></Comment></Member></Member>
+    <Member Name="CONNECT" Datatype="TCON_IP_v4" Version="1.0" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Sections><Section Name="None"><Member Name="InterfaceId" Datatype="HW_ANY"><StartValue>64</StartValue></Member><Member Name="ID" Datatype="CONN_OUC"><StartValue>16#0001</StartValue></Member><Member Name="ConnectionType" Datatype="Byte"><StartValue>16#0B</StartValue></Member><Member Name="ActiveEstablished" Datatype="Bool"><StartValue>TRUE</StartValue></Member><Member Name="RemoteAddress" Datatype="IP_V4" Version="1.0"><Sections><Section Name="None"><Member Name="ADDR" Datatype="Array[1..4] of Byte"><Subelement Path="1"><StartValue>16#C0</StartValue></Subelement><Subelement Path="2"><StartValue>16#A8</StartValue></Subelement><Subelement Path="3"><StartValue>16#00</StartValue></Subelement><Subelement Path="4"><StartValue>16#0A</StartValue></Subelement></Member></Section></Sections></Member><Member Name="RemotePort" Datatype="UInt"><StartValue>502</StartValue></Member><Member Name="LocalPort" Datatype="UInt"><StartValue>0</StartValue></Member></Section></Sections></Member>
+    <Member Name="DEV_Config" Datatype="Array[1..10] of Struct" Remanence="SetInIDB" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Member Name="Use" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">0 - не использовать, 1 - использовать</MultiLanguageText></Comment></Member><Member Name="MODE" Datatype="Bool"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">0 - чтение, 1 - запись</MultiLanguageText></Comment></Member><Member Name="ADDR" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Сетевой адрес устройства</MultiLanguageText></Comment></Member><Member Name="Register" Datatype="UDInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Начальный регистр опроса, см F1</MultiLanguageText></Comment></Member><Member Name="Length" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList><Comment><MultiLanguageText Lang="en-US">Количество последовательных слов для опроса</MultiLanguageText></Comment></Member><Member Name="Source_DB" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member><Member Name="Source_OFFSET" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member><Member Name="Target_DB" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member><Member Name="Target_OFFSET" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">true</BooleanAttribute></AttributeList></Member><Member Name="Status" Datatype="UInt"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList></Member></Member>
+    <Member Name="MB_CLIENT" Datatype="MB_CLIENT" Version="5.1" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="DISCONNECT" Datatype="Bool" /><Member Name="MB_MODE" Datatype="USInt" /><Member Name="MB_DATA_ADDR" Datatype="UDInt" /><Member Name="MB_DATA_LEN" Datatype="UInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="MB_DATA_PTR" Datatype="Variant" /><Member Name="CONNECT" Datatype="Variant" /></Section><Section Name="Static"><Member Name="TCON" Datatype="TCON" Version="4.0"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="ID" Datatype="CONN_OUC" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="CONNECT" Datatype="Variant" /></Section><Section Name="Static" /></Sections></Member><Member Name="TDISCON" Datatype="TDISCON" Version="2.1"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="ID" Datatype="CONN_OUC" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut" /><Section Name="Static" /></Sections></Member><Member Name="TSEND" Datatype="TSEND" Version="4.0"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="ID" Datatype="CONN_OUC" /><Member Name="LEN" Datatype="UDInt" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="DATA" Datatype="Variant" /><Member Name="ADDR" Datatype="Variant" /></Section><Section Name="Static" /></Sections></Member><Member Name="TRECEIVE" Datatype="TRCV" Version="4.0"><Sections><Section Name="Input"><Member Name="EN_R" Datatype="Bool" /><Member Name="ID" Datatype="CONN_OUC" /><Member Name="LEN" Datatype="UDInt" /><Member Name="ADHOC" Datatype="Bool" /></Section><Section Name="Output"><Member Name="NDR" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /><Member Name="RCVD_LEN" Datatype="UDInt" /></Section><Section Name="InOut"><Member Name="DATA" Datatype="Variant" /><Member Name="ADDR" Datatype="Variant" /></Section><Section Name="Static" /></Sections></Member><Member Name="TRESET" Datatype="T_RESET" Version="1.2"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="ID" Datatype="CONN_OUC" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut" /><Section Name="Static" /></Sections></Member><Member Name="TDIAG" Datatype="T_DIAG" Version="1.2"><Sections><Section Name="Input"><Member Name="REQ" Datatype="Bool" /><Member Name="ID" Datatype="CONN_OUC" /></Section><Section Name="Output"><Member Name="DONE" Datatype="Bool" /><Member Name="BUSY" Datatype="Bool" /><Member Name="ERROR" Datatype="Bool" /><Member Name="STATUS" Datatype="Word" /></Section><Section Name="InOut"><Member Name="RESULT" Datatype="Variant" /></Section><Section Name="Static" /></Sections></Member><Member Name="TDIAG_Status" Datatype="TDiag_Status" Version="1.0"><Sections><Section Name="None"><Member Name="InterfaceId" Datatype="HW_ANY" /><Member Name="ID" Datatype="CONN_OUC" /><Member Name="ConnectionType" Datatype="Byte" /><Member Name="ActiveEstablished" Datatype="Bool" /><Member Name="State" Datatype="Byte" /><Member Name="Kind" Datatype="Byte" /><Member Name="SentBytes" Datatype="UDInt" /><Member Name="ReceivedBytes" Datatype="UDInt" /></Section></Sections></Member><Member Name="Blocked_Proc_Timeout" Datatype="Real" /><Member Name="Rcv_Timeout" Datatype="Real" /><Member Name="MB_Unit_ID" Datatype="Byte" /><Member Name="MB_Transaction_ID" Datatype="Word" /><Member Name="MB_State" Datatype="Word" /><Member Name="SAVED_MB_DATA_ADDR" Datatype="UDInt" /><Member Name="SAVED_DATA_LEN" Datatype="UInt" /><Member Name="SAVED_MB_MODE" Datatype="USInt" /><Member Name="Connection_ID" Datatype="Word" /><Member Name="Retries" Datatype="Word" /><Member Name="TEMP_DATA" Datatype="Array[1..263] of Byte" /><Member Name="rcv_timer" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="wd_timer" Datatype="TON_TIME" Version="1.0"><Sections><Section Name="None"><Member Name="PT" Datatype="Time" /><Member Name="ET" Datatype="Time" /><Member Name="IN" Datatype="Bool" /><Member Name="Q" Datatype="Bool" /></Section></Sections></Member><Member Name="Connected" Datatype="Bool" /><Member Name="Active" Datatype="Bool" /></Section></Sections></Member>
+    <Member Name="T_Busy" Datatype="&quot;Time_M&quot;" Accessibility="Public"><AttributeList><BooleanAttribute Name="ExternalAccessible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalVisible" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="ExternalWritable" SystemDefined="true">true</BooleanAttribute><BooleanAttribute Name="SetPoint" SystemDefined="true">false</BooleanAttribute></AttributeList><Sections><Section Name="Input" /><Section Name="Output" /><Section Name="InOut" /><Section Name="Static"><Member Name="SP_M" Datatype="Int" /><Member Name="SP_S" Datatype="Int" /><Member Name="Now_M" Datatype="Int" /><Member Name="Now_S" Datatype="Int" /><Member Name="Rev_M" Datatype="Int" /><Member Name="Rev_S" Datatype="Int" /><Member Name="Progress" Datatype="Real" /><Member Name="Start" Datatype="Bool" /><Member Name="Exit" Datatype="Bool" /><Member Name="Pause" Datatype="Bool" /><Member Name="Reset" Datatype="Bool" /></Section></Sections></Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <IsIECCheckEnabled>false</IsIECCheckEnabled>
+      <MemoryLayout>Standard</MemoryLayout>
+      <Name>ModBus_TCP</Name>
+      <Number>40</Number>
+      <ProgrammingLanguage>LAD</ProgrammingLanguage>
+      <SetENOAutomatically>false</SetENOAutomatically>
+      <UDABlockProperties />
+      <UDAEnableTagReadback>false</UDAEnableTagReadback>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>ВНИМАНИЕ!  Через один аппаратный порт контроллера можно проводить множество различных опросов по ModBus TCP. Для этого у каждого экземпляра должен быть указан уникальный CONNECT.ID.
+
+Для каждого уникального CONNECT.ID / внешней ветки / точки подключения (IP, RemotePort) рекомендуется использовать отдельный экземпляр функционального блока. Например, при использовании tGW-735 имеющего 3 порта подключения с RemotePort = 502, 503 и 504 соответственно (но общий IP адрес) рекомендуется использовать три отдельных блока ModBus_TCP с уникальными CONNECT.ID.
+
+Каждая точка чтения/записи = 1 экземпляр DEV_Config, количество элементов в массиве можно менять по необходимости, итоговое количество элементов массива указывается в теге Limit.
+
+Для режима чтения необходимо указать:
+- MODE = 0
+- Source_DB = 40 (номер DB Modbus_TCP_DB)
+- SourceOFFSET = 0
+- Target_DB = xx (номер DB, куда необходимо положить прочитанные данные)
+- Target_OFFSET = xx (номер байта, начиная с которого кладутся прочитанные данные в выбранный DB)
+
+Для режима опроса необходимо указать:
+- MODE = 1
+- Source_DB = xx (номер DB, откуда необходимо взять данные для передачи)
+- Source_OFFSET = xx (номер байта, начиная с которого берутся данные для передачи)
+- Target_DB = 40 (номер DB Modbus_TCP_DB)
+- Target_OFFSET = 0</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>ru-RU</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Enable" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="Register" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="Length" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DATA" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="CONNECT" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Done" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Busy" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Error" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Status" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="32">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="MB_CLIENT" Version="5.1" UId="33">
+      <Instance Scope="LocalVariable" UId="34">
+        <Component Name="MB_CLIENT" />
+      </Instance>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="35">
+      <Powerrail />
+      <NameCon UId="33" Name="en" />
+      <NameCon UId="32" Name="in" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="21" />
+      <NameCon UId="32" Name="operand" />
+    </Wire>
+    <Wire UId="37">
+      <NameCon UId="32" Name="out" />
+      <NameCon UId="33" Name="DISCONNECT" />
+    </Wire>
+    <Wire UId="38">
+      <IdentCon UId="22" />
+      <NameCon UId="33" Name="REQ" />
+    </Wire>
+    <Wire UId="39">
+      <IdentCon UId="23" />
+      <NameCon UId="33" Name="MB_MODE" />
+    </Wire>
+    <Wire UId="40">
+      <IdentCon UId="24" />
+      <NameCon UId="33" Name="MB_DATA_ADDR" />
+    </Wire>
+    <Wire UId="41">
+      <IdentCon UId="25" />
+      <NameCon UId="33" Name="MB_DATA_LEN" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="26" />
+      <NameCon UId="33" Name="MB_DATA_PTR" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="27" />
+      <NameCon UId="33" Name="CONNECT" />
+    </Wire>
+    <Wire UId="44">
+      <NameCon UId="33" Name="DONE" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="45">
+      <NameCon UId="33" Name="BUSY" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="46">
+      <NameCon UId="33" Name="ERROR" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="47">
+      <NameCon UId="33" Name="STATUS" />
+      <IdentCon UId="31" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Драйвер коммуникации</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Error" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Error_Code" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Reset" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Word</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Error_Code" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Reset" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Busy" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Done" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Busy" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Error" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="T_Busy" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="35" />
+    <Part Name="Move" UId="36" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="37" />
+    <Part Name="Move" UId="38" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="39" />
+    <Part Name="Contact" UId="40" />
+    <Part Name="Contact" UId="41" />
+    <Part Name="Contact" UId="42">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="43">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="44">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="O" UId="45">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Coil" UId="46" />
+    <Call UId="47">
+      <CallInfo Name="Time_M" BlockType="FB">
+        <Instance Scope="LocalVariable" UId="48">
+          <Component Name="T_Busy" />
+        </Instance>
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="49">
+      <Powerrail />
+      <NameCon UId="35" Name="in" />
+      <NameCon UId="37" Name="in" />
+      <NameCon UId="40" Name="in" />
+      <NameCon UId="41" Name="in" />
+      <NameCon UId="47" Name="en" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="21" />
+      <NameCon UId="35" Name="operand" />
+    </Wire>
+    <Wire UId="51">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="22" />
+      <NameCon UId="36" Name="in" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="36" Name="out1" />
+      <IdentCon UId="23" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="24" />
+      <NameCon UId="37" Name="operand" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="37" Name="out" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="25" />
+      <NameCon UId="38" Name="in" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="38" Name="eno" />
+      <NameCon UId="39" Name="in" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="38" Name="out1" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="38" Name="out2" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="28" />
+      <NameCon UId="39" Name="operand" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="29" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="62">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="45" Name="in1" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="30" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="31" />
+      <NameCon UId="42" Name="operand" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="42" Name="out" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="32" />
+      <NameCon UId="43" Name="operand" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="43" Name="out" />
+      <NameCon UId="44" Name="in" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="33" />
+      <NameCon UId="44" Name="operand" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="45" Name="in2" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="45" Name="out" />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="72">
+      <IdentCon UId="34" />
+      <NameCon UId="46" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Контроль опроса - таймер таймаурат и обработка аварий</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Done" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="25">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Error" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="29">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="T_Busy" />
+        <Component Name="Exit" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>3</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="32">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Enable" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="35">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="37">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="39">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="40" />
+    <Part Name="Contact" UId="41" />
+    <Part Name="Move" UId="42" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="43" />
+    <Part Name="Contact" UId="44" />
+    <Part Name="Move" UId="45" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="46" />
+    <Part Name="Contact" UId="47" />
+    <Part Name="Move" UId="48" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="49" />
+    <Part Name="Contact" UId="50">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="51" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="52" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="RCoil" UId="53" />
+  </Parts>
+  <Wires>
+    <Wire UId="54">
+      <Powerrail />
+      <NameCon UId="40" Name="in" />
+      <NameCon UId="50" Name="in" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="21" />
+      <NameCon UId="40" Name="operand" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="40" Name="out" />
+      <NameCon UId="41" Name="in" />
+      <NameCon UId="44" Name="in" />
+      <NameCon UId="47" Name="in" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="22" />
+      <NameCon UId="41" Name="operand" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="41" Name="out" />
+      <NameCon UId="42" Name="en" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="23" />
+      <NameCon UId="42" Name="in" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="42" Name="eno" />
+      <NameCon UId="43" Name="in" />
+    </Wire>
+    <Wire UId="61">
+      <NameCon UId="42" Name="out1" />
+      <IdentCon UId="24" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="25" />
+      <NameCon UId="43" Name="operand" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="26" />
+      <NameCon UId="44" Name="operand" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="44" Name="out" />
+      <NameCon UId="45" Name="en" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="27" />
+      <NameCon UId="45" Name="in" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="45" Name="eno" />
+      <NameCon UId="46" Name="in" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="45" Name="out1" />
+      <IdentCon UId="28" />
+    </Wire>
+    <Wire UId="68">
+      <IdentCon UId="29" />
+      <NameCon UId="46" Name="operand" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="30" />
+      <NameCon UId="47" Name="operand" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="47" Name="out" />
+      <NameCon UId="48" Name="en" />
+    </Wire>
+    <Wire UId="71">
+      <IdentCon UId="31" />
+      <NameCon UId="48" Name="in" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="48" Name="eno" />
+      <NameCon UId="49" Name="in" />
+    </Wire>
+    <Wire UId="73">
+      <NameCon UId="48" Name="out1" />
+      <IdentCon UId="32" />
+    </Wire>
+    <Wire UId="74">
+      <IdentCon UId="33" />
+      <NameCon UId="49" Name="operand" />
+    </Wire>
+    <Wire UId="75">
+      <IdentCon UId="34" />
+      <NameCon UId="50" Name="operand" />
+    </Wire>
+    <Wire UId="76">
+      <NameCon UId="50" Name="out" />
+      <NameCon UId="51" Name="en" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="35" />
+      <NameCon UId="51" Name="in" />
+    </Wire>
+    <Wire UId="78">
+      <NameCon UId="51" Name="eno" />
+      <NameCon UId="52" Name="en" />
+    </Wire>
+    <Wire UId="79">
+      <NameCon UId="51" Name="out1" />
+      <IdentCon UId="36" />
+    </Wire>
+    <Wire UId="80">
+      <IdentCon UId="37" />
+      <NameCon UId="52" Name="in" />
+    </Wire>
+    <Wire UId="81">
+      <NameCon UId="52" Name="eno" />
+      <NameCon UId="53" Name="in" />
+    </Wire>
+    <Wire UId="82">
+      <NameCon UId="52" Name="out1" />
+      <IdentCon UId="38" />
+    </Wire>
+    <Wire UId="83">
+      <IdentCon UId="39" />
+      <NameCon UId="53" Name="operand" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Завершение опроса по условиям</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v4">
+  <Parts>
+    <Access Scope="LocalVariable" UId="21">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Enable" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="22">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="23">
+      <Symbol>
+        <Component Name="Limit" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="24">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="DATA" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="27">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Use" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="28">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="31">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Use" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>5</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="33">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="34">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="35">
+      <Symbol>
+        <Component Name="Limit" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="36">
+      <Symbol>
+        <Component Name="Limit" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="37">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="38">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="39">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="40">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="ADDR" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="41">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="ADDR" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="42">
+      <Symbol>
+        <Component Name="MB_CLIENT" />
+        <Component Name="MB_Unit_ID" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="43">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="44">
+      <Constant>
+        <ConstantType>USInt</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="45">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="46">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="47">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="48">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="49">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="50">
+      <Constant>
+        <ConstantType>USInt</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="51">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="52">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="53">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="54">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="55">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="56">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>2</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="57">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Register" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="58">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="Register" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="59">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Length" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="60">
+      <Symbol>
+        <Component Name="COM_REQ" />
+        <Component Name="Length" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="61">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="62">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="63">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="64">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="65">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>3</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="66">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="67">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="68">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="69">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="70">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="71">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="72">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Source_DB" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="73">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Source_OFFSET" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="74">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Target_DB" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="75">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Target_OFFSET" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="76">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Length" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="77">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="78">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="79">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="80">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="81">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="82">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>4</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="83">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Start" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="84">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="REQ_Busy" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="85">
+      <Symbol>
+        <Component Name="COM_Control" />
+        <Component Name="Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="86">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Status" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="87">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="88">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Source_DB" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="89">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Source_OFFSET" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="90">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Target_DB" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="91">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Target_OFFSET" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="92">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="Length" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="93">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="94">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="95">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="96">
+      <Symbol>
+        <Component Name="DEV_Config" AccessModifier="Array">
+          <Access Scope="LocalVariable">
+            <Symbol>
+              <Component Name="Device" />
+            </Symbol>
+          </Access>
+        </Component>
+        <Component Name="MODE" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="97">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="98">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="99">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="100">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="101">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>5</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="102">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="103">
+      <Symbol>
+        <Component Name="Limit" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="104">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="105">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="106">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="107">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="108">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="109">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="110">
+      <Symbol>
+        <Component Name="Limit" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="111">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="112">
+      <Symbol>
+        <Component Name="Device" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="113">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="114">
+      <Symbol>
+        <Component Name="Step" />
+      </Symbol>
+    </Access>
+    <Part Name="Contact" UId="115" />
+    <Part Name="Le" UId="116">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Eq" UId="117">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Call UId="118">
+      <CallInfo Name="Void_Data" BlockType="FC">
+        <Parameter Name="DATA" Section="InOut" Type="Array[0..100] of Word" />
+      </CallInfo>
+    </Call>
+    <Part Name="Contact" UId="119" />
+    <Part Name="Add" UId="120" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Contact" UId="121">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="122" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Gt" UId="123">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="124" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Eq" UId="125">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="126" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="127">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="128" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Add" UId="129" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Contact" UId="130" />
+    <Part Name="Move" UId="131" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Add" UId="132" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Eq" UId="133">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="134" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="135" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Add" UId="136" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Eq" UId="137">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="138">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="SCoil" UId="139" />
+    <Part Name="Add" UId="140" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Contact" UId="141" />
+    <Call UId="142">
+      <CallInfo Name="Indirect_MOVE" BlockType="FC">
+        <Parameter Name="Source_DB" Section="Input" Type="UInt" />
+        <Parameter Name="Source_OFFSET" Section="Input" Type="UInt" />
+        <Parameter Name="Target_DB" Section="Input" Type="UInt" />
+        <Parameter Name="Target_OFFSET" Section="Input" Type="UInt" />
+        <Parameter Name="Length" Section="Input" Type="UInt" />
+      </CallInfo>
+    </Call>
+    <Part Name="SCoil" UId="143" />
+    <Part Name="Add" UId="144" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Eq" UId="145">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="146">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Contact" UId="147">
+      <Negated Name="operand" />
+    </Part>
+    <Part Name="Move" UId="148" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Contact" UId="149">
+      <Negated Name="operand" />
+    </Part>
+    <Call UId="150">
+      <CallInfo Name="Indirect_MOVE" BlockType="FC">
+        <Parameter Name="Source_DB" Section="Input" Type="UInt" />
+        <Parameter Name="Source_OFFSET" Section="Input" Type="UInt" />
+        <Parameter Name="Target_DB" Section="Input" Type="UInt" />
+        <Parameter Name="Target_OFFSET" Section="Input" Type="UInt" />
+        <Parameter Name="Length" Section="Input" Type="UInt" />
+      </CallInfo>
+    </Call>
+    <Part Name="Add" UId="151" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Contact" UId="152" />
+    <Part Name="Add" UId="153" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Eq" UId="154">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Le" UId="155">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Add" UId="156" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">2</TemplateValue>
+      <AutomaticTyped Name="SrcType" />
+    </Part>
+    <Part Name="Move" UId="157" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Gt" UId="158">
+      <TemplateValue Name="SrcType" Type="Type">Int</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="159" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+    <Part Name="Move" UId="160" DisabledENO="true">
+      <TemplateValue Name="Card" Type="Cardinality">1</TemplateValue>
+    </Part>
+  </Parts>
+  <Wires>
+    <Wire UId="161">
+      <Powerrail />
+      <NameCon UId="115" Name="in" />
+      <NameCon UId="125" Name="pre" />
+      <NameCon UId="133" Name="pre" />
+      <NameCon UId="137" Name="pre" />
+      <NameCon UId="145" Name="pre" />
+      <NameCon UId="154" Name="pre" />
+    </Wire>
+    <Wire UId="162">
+      <IdentCon UId="21" />
+      <NameCon UId="115" Name="operand" />
+    </Wire>
+    <Wire UId="163">
+      <NameCon UId="115" Name="out" />
+      <NameCon UId="116" Name="pre" />
+      <NameCon UId="123" Name="pre" />
+    </Wire>
+    <Wire UId="164">
+      <IdentCon UId="22" />
+      <NameCon UId="116" Name="in1" />
+    </Wire>
+    <Wire UId="165">
+      <IdentCon UId="23" />
+      <NameCon UId="116" Name="in2" />
+    </Wire>
+    <Wire UId="166">
+      <NameCon UId="116" Name="out" />
+      <NameCon UId="117" Name="pre" />
+    </Wire>
+    <Wire UId="167">
+      <IdentCon UId="24" />
+      <NameCon UId="117" Name="in1" />
+    </Wire>
+    <Wire UId="168">
+      <IdentCon UId="25" />
+      <NameCon UId="117" Name="in2" />
+    </Wire>
+    <Wire UId="169">
+      <NameCon UId="117" Name="out" />
+      <NameCon UId="118" Name="en" />
+    </Wire>
+    <Wire UId="170">
+      <IdentCon UId="26" />
+      <NameCon UId="118" Name="DATA" />
+    </Wire>
+    <Wire UId="171">
+      <NameCon UId="118" Name="eno" />
+      <NameCon UId="119" Name="in" />
+      <NameCon UId="121" Name="in" />
+    </Wire>
+    <Wire UId="172">
+      <IdentCon UId="27" />
+      <NameCon UId="119" Name="operand" />
+    </Wire>
+    <Wire UId="173">
+      <NameCon UId="119" Name="out" />
+      <NameCon UId="120" Name="en" />
+    </Wire>
+    <Wire UId="174">
+      <IdentCon UId="28" />
+      <NameCon UId="120" Name="in1" />
+    </Wire>
+    <Wire UId="175">
+      <IdentCon UId="29" />
+      <NameCon UId="120" Name="in2" />
+    </Wire>
+    <Wire UId="176">
+      <NameCon UId="120" Name="out" />
+      <IdentCon UId="30" />
+    </Wire>
+    <Wire UId="177">
+      <IdentCon UId="31" />
+      <NameCon UId="121" Name="operand" />
+    </Wire>
+    <Wire UId="178">
+      <NameCon UId="121" Name="out" />
+      <NameCon UId="122" Name="en" />
+    </Wire>
+    <Wire UId="179">
+      <IdentCon UId="32" />
+      <NameCon UId="122" Name="in" />
+    </Wire>
+    <Wire UId="180">
+      <NameCon UId="122" Name="out1" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="181">
+      <IdentCon UId="34" />
+      <NameCon UId="123" Name="in1" />
+    </Wire>
+    <Wire UId="182">
+      <IdentCon UId="35" />
+      <NameCon UId="123" Name="in2" />
+    </Wire>
+    <Wire UId="183">
+      <NameCon UId="123" Name="out" />
+      <NameCon UId="124" Name="en" />
+    </Wire>
+    <Wire UId="184">
+      <IdentCon UId="36" />
+      <NameCon UId="124" Name="in" />
+    </Wire>
+    <Wire UId="185">
+      <NameCon UId="124" Name="out1" />
+      <IdentCon UId="37" />
+    </Wire>
+    <Wire UId="186">
+      <IdentCon UId="38" />
+      <NameCon UId="125" Name="in1" />
+    </Wire>
+    <Wire UId="187">
+      <IdentCon UId="39" />
+      <NameCon UId="125" Name="in2" />
+    </Wire>
+    <Wire UId="188">
+      <NameCon UId="125" Name="out" />
+      <NameCon UId="126" Name="en" />
+    </Wire>
+    <Wire UId="189">
+      <IdentCon UId="40" />
+      <NameCon UId="126" Name="in" />
+    </Wire>
+    <Wire UId="190">
+      <NameCon UId="126" Name="eno" />
+      <NameCon UId="127" Name="in" />
+      <NameCon UId="130" Name="in" />
+    </Wire>
+    <Wire UId="191">
+      <NameCon UId="126" Name="out1" />
+      <IdentCon UId="41" />
+    </Wire>
+    <Wire UId="192">
+      <NameCon UId="126" Name="out2" />
+      <IdentCon UId="42" />
+    </Wire>
+    <Wire UId="193">
+      <IdentCon UId="43" />
+      <NameCon UId="127" Name="operand" />
+    </Wire>
+    <Wire UId="194">
+      <NameCon UId="127" Name="out" />
+      <NameCon UId="128" Name="en" />
+    </Wire>
+    <Wire UId="195">
+      <IdentCon UId="44" />
+      <NameCon UId="128" Name="in" />
+    </Wire>
+    <Wire UId="196">
+      <NameCon UId="128" Name="eno" />
+      <NameCon UId="129" Name="en" />
+    </Wire>
+    <Wire UId="197">
+      <NameCon UId="128" Name="out1" />
+      <IdentCon UId="45" />
+    </Wire>
+    <Wire UId="198">
+      <IdentCon UId="46" />
+      <NameCon UId="129" Name="in1" />
+    </Wire>
+    <Wire UId="199">
+      <IdentCon UId="47" />
+      <NameCon UId="129" Name="in2" />
+    </Wire>
+    <Wire UId="200">
+      <NameCon UId="129" Name="out" />
+      <IdentCon UId="48" />
+    </Wire>
+    <Wire UId="201">
+      <IdentCon UId="49" />
+      <NameCon UId="130" Name="operand" />
+    </Wire>
+    <Wire UId="202">
+      <NameCon UId="130" Name="out" />
+      <NameCon UId="131" Name="en" />
+    </Wire>
+    <Wire UId="203">
+      <IdentCon UId="50" />
+      <NameCon UId="131" Name="in" />
+    </Wire>
+    <Wire UId="204">
+      <NameCon UId="131" Name="eno" />
+      <NameCon UId="132" Name="en" />
+    </Wire>
+    <Wire UId="205">
+      <NameCon UId="131" Name="out1" />
+      <IdentCon UId="51" />
+    </Wire>
+    <Wire UId="206">
+      <IdentCon UId="52" />
+      <NameCon UId="132" Name="in1" />
+    </Wire>
+    <Wire UId="207">
+      <IdentCon UId="53" />
+      <NameCon UId="132" Name="in2" />
+    </Wire>
+    <Wire UId="208">
+      <NameCon UId="132" Name="out" />
+      <IdentCon UId="54" />
+    </Wire>
+    <Wire UId="209">
+      <IdentCon UId="55" />
+      <NameCon UId="133" Name="in1" />
+    </Wire>
+    <Wire UId="210">
+      <IdentCon UId="56" />
+      <NameCon UId="133" Name="in2" />
+    </Wire>
+    <Wire UId="211">
+      <NameCon UId="133" Name="out" />
+      <NameCon UId="134" Name="en" />
+    </Wire>
+    <Wire UId="212">
+      <IdentCon UId="57" />
+      <NameCon UId="134" Name="in" />
+    </Wire>
+    <Wire UId="213">
+      <NameCon UId="134" Name="eno" />
+      <NameCon UId="135" Name="en" />
+    </Wire>
+    <Wire UId="214">
+      <NameCon UId="134" Name="out1" />
+      <IdentCon UId="58" />
+    </Wire>
+    <Wire UId="215">
+      <IdentCon UId="59" />
+      <NameCon UId="135" Name="in" />
+    </Wire>
+    <Wire UId="216">
+      <NameCon UId="135" Name="eno" />
+      <NameCon UId="136" Name="en" />
+    </Wire>
+    <Wire UId="217">
+      <NameCon UId="135" Name="out1" />
+      <IdentCon UId="60" />
+    </Wire>
+    <Wire UId="218">
+      <IdentCon UId="61" />
+      <NameCon UId="136" Name="in1" />
+    </Wire>
+    <Wire UId="219">
+      <IdentCon UId="62" />
+      <NameCon UId="136" Name="in2" />
+    </Wire>
+    <Wire UId="220">
+      <NameCon UId="136" Name="out" />
+      <IdentCon UId="63" />
+    </Wire>
+    <Wire UId="221">
+      <IdentCon UId="64" />
+      <NameCon UId="137" Name="in1" />
+    </Wire>
+    <Wire UId="222">
+      <IdentCon UId="65" />
+      <NameCon UId="137" Name="in2" />
+    </Wire>
+    <Wire UId="223">
+      <NameCon UId="137" Name="out" />
+      <NameCon UId="138" Name="in" />
+      <NameCon UId="141" Name="in" />
+    </Wire>
+    <Wire UId="224">
+      <IdentCon UId="66" />
+      <NameCon UId="138" Name="operand" />
+    </Wire>
+    <Wire UId="225">
+      <NameCon UId="138" Name="out" />
+      <NameCon UId="139" Name="in" />
+    </Wire>
+    <Wire UId="226">
+      <IdentCon UId="67" />
+      <NameCon UId="139" Name="operand" />
+    </Wire>
+    <Wire UId="227">
+      <NameCon UId="139" Name="out" />
+      <NameCon UId="140" Name="en" />
+    </Wire>
+    <Wire UId="228">
+      <IdentCon UId="68" />
+      <NameCon UId="140" Name="in1" />
+    </Wire>
+    <Wire UId="229">
+      <IdentCon UId="69" />
+      <NameCon UId="140" Name="in2" />
+    </Wire>
+    <Wire UId="230">
+      <NameCon UId="140" Name="out" />
+      <IdentCon UId="70" />
+    </Wire>
+    <Wire UId="231">
+      <IdentCon UId="71" />
+      <NameCon UId="141" Name="operand" />
+    </Wire>
+    <Wire UId="232">
+      <NameCon UId="141" Name="out" />
+      <NameCon UId="142" Name="en" />
+    </Wire>
+    <Wire UId="233">
+      <IdentCon UId="72" />
+      <NameCon UId="142" Name="Source_DB" />
+    </Wire>
+    <Wire UId="234">
+      <IdentCon UId="73" />
+      <NameCon UId="142" Name="Source_OFFSET" />
+    </Wire>
+    <Wire UId="235">
+      <IdentCon UId="74" />
+      <NameCon UId="142" Name="Target_DB" />
+    </Wire>
+    <Wire UId="236">
+      <IdentCon UId="75" />
+      <NameCon UId="142" Name="Target_OFFSET" />
+    </Wire>
+    <Wire UId="237">
+      <IdentCon UId="76" />
+      <NameCon UId="142" Name="Length" />
+    </Wire>
+    <Wire UId="238">
+      <NameCon UId="142" Name="eno" />
+      <NameCon UId="143" Name="in" />
+    </Wire>
+    <Wire UId="239">
+      <IdentCon UId="77" />
+      <NameCon UId="143" Name="operand" />
+    </Wire>
+    <Wire UId="240">
+      <NameCon UId="143" Name="out" />
+      <NameCon UId="144" Name="en" />
+    </Wire>
+    <Wire UId="241">
+      <IdentCon UId="78" />
+      <NameCon UId="144" Name="in1" />
+    </Wire>
+    <Wire UId="242">
+      <IdentCon UId="79" />
+      <NameCon UId="144" Name="in2" />
+    </Wire>
+    <Wire UId="243">
+      <NameCon UId="144" Name="out" />
+      <IdentCon UId="80" />
+    </Wire>
+    <Wire UId="244">
+      <IdentCon UId="81" />
+      <NameCon UId="145" Name="in1" />
+    </Wire>
+    <Wire UId="245">
+      <IdentCon UId="82" />
+      <NameCon UId="145" Name="in2" />
+    </Wire>
+    <Wire UId="246">
+      <NameCon UId="145" Name="out" />
+      <NameCon UId="146" Name="in" />
+    </Wire>
+    <Wire UId="247">
+      <IdentCon UId="83" />
+      <NameCon UId="146" Name="operand" />
+    </Wire>
+    <Wire UId="248">
+      <NameCon UId="146" Name="out" />
+      <NameCon UId="147" Name="in" />
+    </Wire>
+    <Wire UId="249">
+      <IdentCon UId="84" />
+      <NameCon UId="147" Name="operand" />
+    </Wire>
+    <Wire UId="250">
+      <NameCon UId="147" Name="out" />
+      <NameCon UId="148" Name="en" />
+    </Wire>
+    <Wire UId="251">
+      <IdentCon UId="85" />
+      <NameCon UId="148" Name="in" />
+    </Wire>
+    <Wire UId="252">
+      <NameCon UId="148" Name="eno" />
+      <NameCon UId="149" Name="in" />
+      <NameCon UId="152" Name="in" />
+    </Wire>
+    <Wire UId="253">
+      <NameCon UId="148" Name="out1" />
+      <IdentCon UId="86" />
+    </Wire>
+    <Wire UId="254">
+      <IdentCon UId="87" />
+      <NameCon UId="149" Name="operand" />
+    </Wire>
+    <Wire UId="255">
+      <NameCon UId="149" Name="out" />
+      <NameCon UId="150" Name="en" />
+    </Wire>
+    <Wire UId="256">
+      <IdentCon UId="88" />
+      <NameCon UId="150" Name="Source_DB" />
+    </Wire>
+    <Wire UId="257">
+      <IdentCon UId="89" />
+      <NameCon UId="150" Name="Source_OFFSET" />
+    </Wire>
+    <Wire UId="258">
+      <IdentCon UId="90" />
+      <NameCon UId="150" Name="Target_DB" />
+    </Wire>
+    <Wire UId="259">
+      <IdentCon UId="91" />
+      <NameCon UId="150" Name="Target_OFFSET" />
+    </Wire>
+    <Wire UId="260">
+      <IdentCon UId="92" />
+      <NameCon UId="150" Name="Length" />
+    </Wire>
+    <Wire UId="261">
+      <NameCon UId="150" Name="eno" />
+      <NameCon UId="151" Name="en" />
+    </Wire>
+    <Wire UId="262">
+      <IdentCon UId="93" />
+      <NameCon UId="151" Name="in1" />
+    </Wire>
+    <Wire UId="263">
+      <IdentCon UId="94" />
+      <NameCon UId="151" Name="in2" />
+    </Wire>
+    <Wire UId="264">
+      <NameCon UId="151" Name="out" />
+      <IdentCon UId="95" />
+    </Wire>
+    <Wire UId="265">
+      <IdentCon UId="96" />
+      <NameCon UId="152" Name="operand" />
+    </Wire>
+    <Wire UId="266">
+      <NameCon UId="152" Name="out" />
+      <NameCon UId="153" Name="en" />
+    </Wire>
+    <Wire UId="267">
+      <IdentCon UId="97" />
+      <NameCon UId="153" Name="in1" />
+    </Wire>
+    <Wire UId="268">
+      <IdentCon UId="98" />
+      <NameCon UId="153" Name="in2" />
+    </Wire>
+    <Wire UId="269">
+      <NameCon UId="153" Name="out" />
+      <IdentCon UId="99" />
+    </Wire>
+    <Wire UId="270">
+      <IdentCon UId="100" />
+      <NameCon UId="154" Name="in1" />
+    </Wire>
+    <Wire UId="271">
+      <IdentCon UId="101" />
+      <NameCon UId="154" Name="in2" />
+    </Wire>
+    <Wire UId="272">
+      <NameCon UId="154" Name="out" />
+      <NameCon UId="155" Name="pre" />
+      <NameCon UId="158" Name="pre" />
+    </Wire>
+    <Wire UId="273">
+      <IdentCon UId="102" />
+      <NameCon UId="155" Name="in1" />
+    </Wire>
+    <Wire UId="274">
+      <IdentCon UId="103" />
+      <NameCon UId="155" Name="in2" />
+    </Wire>
+    <Wire UId="275">
+      <NameCon UId="155" Name="out" />
+      <NameCon UId="156" Name="en" />
+    </Wire>
+    <Wire UId="276">
+      <IdentCon UId="104" />
+      <NameCon UId="156" Name="in1" />
+    </Wire>
+    <Wire UId="277">
+      <IdentCon UId="105" />
+      <NameCon UId="156" Name="in2" />
+    </Wire>
+    <Wire UId="278">
+      <NameCon UId="156" Name="eno" />
+      <NameCon UId="157" Name="en" />
+    </Wire>
+    <Wire UId="279">
+      <NameCon UId="156" Name="out" />
+      <IdentCon UId="106" />
+    </Wire>
+    <Wire UId="280">
+      <IdentCon UId="107" />
+      <NameCon UId="157" Name="in" />
+    </Wire>
+    <Wire UId="281">
+      <NameCon UId="157" Name="out1" />
+      <IdentCon UId="108" />
+    </Wire>
+    <Wire UId="282">
+      <IdentCon UId="109" />
+      <NameCon UId="158" Name="in1" />
+    </Wire>
+    <Wire UId="283">
+      <IdentCon UId="110" />
+      <NameCon UId="158" Name="in2" />
+    </Wire>
+    <Wire UId="284">
+      <NameCon UId="158" Name="out" />
+      <NameCon UId="159" Name="en" />
+    </Wire>
+    <Wire UId="285">
+      <IdentCon UId="111" />
+      <NameCon UId="159" Name="in" />
+    </Wire>
+    <Wire UId="286">
+      <NameCon UId="159" Name="eno" />
+      <NameCon UId="160" Name="en" />
+    </Wire>
+    <Wire UId="287">
+      <NameCon UId="159" Name="out1" />
+      <IdentCon UId="112" />
+    </Wire>
+    <Wire UId="288">
+      <IdentCon UId="113" />
+      <NameCon UId="160" Name="in" />
+    </Wire>
+    <Wire UId="289">
+      <NameCon UId="160" Name="out1" />
+      <IdentCon UId="114" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>Цикл опроса активен</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="20" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>LAD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="21" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>ru-RU</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="27" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="28" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>Блок опроса ModBus TCP</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="29" CompositionName="Items">
+            <AttributeList>
+              <Culture>ru-RU</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.FB>
+</Document>

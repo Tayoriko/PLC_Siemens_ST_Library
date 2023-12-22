@@ -1,0 +1,19 @@
+﻿FUNCTION "Scale" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      Value : Real;   // Актуальное значение
+      Min : Real;   // Верхняя граница масштаба
+      Max : Real;   // Нижняя граница масштаба
+      Limit : Real;   // Максимальное входное значение (минимальное = 0)
+   END_VAR
+
+   VAR_OUTPUT 
+      Result : Real;   // Результат масштабирования
+   END_VAR
+
+
+BEGIN
+	#Result := (#Max - #Min) / (#Limit - 0.0) * #Value + #Min;
+END_FUNCTION
+
